@@ -18,3 +18,14 @@ library(tidyverse)
 install.packages("lubridate")
 library(lubridate)
 ```
+### Read dataset split into troops, temperature and cities travelled
+
+```
+
+minard_cities <- read.table("minard_cities.txt", header = TRUE, stringsAsFactors = FALSE)
+
+minard_troops <- read.table("minard_troops.txt", header = TRUE, stringsAsFactors = FALSE)
+
+minard_temps <- read.table("minard_temps.txt", header = TRUE, stringsAsFactors = FALSE) %>%
+  mutate(date = dmy(date)) 
+```
